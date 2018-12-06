@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-Exception
 Version  : 0.43
-Release  : 6
+Release  : 7
 URL      : http://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/Test-Exception-0.43.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/Test-Exception-0.43.tar.gz
 Summary  : 'Test exception-based code'
