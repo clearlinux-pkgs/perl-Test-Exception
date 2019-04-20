@@ -16,6 +16,16 @@ BuildRequires : perl(Sub::Uplevel)
 %description
 No detailed description available
 
+%package dev
+Summary: dev components for the perl-Test-Exception package.
+Group: Development
+Provides: perl-Test-Exception-devel = %{version}-%{release}
+Requires: perl-Test-Exception = %{version}-%{release}
+
+%description dev
+dev components for the perl-Test-Exception package.
+
+
 %prep
 %setup -q -n Test-Exception-0.43
 
@@ -53,3 +63,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.28.2/Test/Exception.pm
+
+%files dev
+%defattr(-,root,root,-)
+/usr/share/man/man3/Test::Exception.3
