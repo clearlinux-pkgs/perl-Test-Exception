@@ -4,10 +4,10 @@
 #
 Name     : perl-Test-Exception
 Version  : 0.43
-Release  : 10
+Release  : 11
 URL      : http://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/Test-Exception-0.43.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/Test-Exception-0.43.tar.gz
-Summary  : 'Test exception-based code'
+Summary  : Perl/CPAN Module Test::Exception : Functions for testing exceptionbased code
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 BuildRequires : buildreq-cpan
@@ -15,15 +15,6 @@ BuildRequires : perl(Sub::Uplevel)
 
 %description
 No detailed description available
-
-%package dev
-Summary: dev components for the perl-Test-Exception package.
-Group: Development
-Provides: perl-Test-Exception-devel = %{version}-%{release}
-
-%description dev
-dev components for the perl-Test-Exception package.
-
 
 %prep
 %setup -q -n Test-Exception-0.43
@@ -62,8 +53,3 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.1/Test/Exception.pm
-
-%files dev
-%defattr(-,root,root,-)
-/usr/share/man/man3/Test::Exception.3
