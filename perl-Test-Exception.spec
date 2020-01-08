@@ -4,12 +4,13 @@
 #
 Name     : perl-Test-Exception
 Version  : 0.43
-Release  : 14
+Release  : 15
 URL      : http://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/Test-Exception-0.43.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/Test-Exception-0.43.tar.gz
-Summary  : Perl/CPAN Module Test::Exception : Functions for testing exceptionbased code
+Summary  : 'Test exception-based code'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl-Test-Exception-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Sub::Uplevel)
 
@@ -26,14 +27,24 @@ Requires: perl-Test-Exception = %{version}-%{release}
 dev components for the perl-Test-Exception package.
 
 
+%package perl
+Summary: perl components for the perl-Test-Exception package.
+Group: Default
+Requires: perl-Test-Exception = %{version}-%{release}
+
+%description perl
+perl components for the perl-Test-Exception package.
+
+
 %prep
 %setup -q -n Test-Exception-0.43
+cd %{_builddir}/Test-Exception-0.43
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -43,7 +54,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -63,8 +74,11 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Test/Exception.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Test::Exception.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Test/Exception.pm
