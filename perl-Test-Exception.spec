@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-Exception
 Version  : 0.43
-Release  : 19
+Release  : 20
 URL      : http://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/Test-Exception-0.43.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/Test-Exception-0.43.tar.gz
 Summary  : 'Test exception-based code'
@@ -81,4 +81,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Test/Exception.pm
+/usr/lib/perl5/*
